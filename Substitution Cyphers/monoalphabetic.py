@@ -13,5 +13,15 @@ def monoalpha(plaintext, cypher):
     
     return cyphertext
 
+def ui():
+    """UI Implementation with prints and inputs"""
+    print("Insert the text to be encyphered")
+    plaintext = input()
+    print("Insert the randomized alphabet")
+    cypher = input()
+
+    return plaintext, cypher
+
 if __name__ == "__main__":
-    print(monoalpha("heRMEs","wxyzAbcdefghijklmNOpqrstuv"))
+    plaintext, cypher = ui()
+    print(monoalpha(plaintext, cypher))
