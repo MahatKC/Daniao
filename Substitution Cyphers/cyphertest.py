@@ -1,6 +1,7 @@
 import unittest 
 import caesar
 from vigenere import vigenere
+from monoalphabetic import monoalpha
 
 class caesar_tests(unittest.TestCase):
     def test_caesar_all_lower(self):
@@ -18,5 +19,13 @@ class vigenere_tests(unittest.TestCase):
     def test_vigenere_identity(self):
         self.assertEqual(vigenere("hermes","aaa"),"hermes")
 
+class monoalphabetic_tests(unittest.TestCase):
+    def test_monoalphabetic_standard(self):
+        self.assertEqual(monoalpha("hermes","wxyzabcdefghijklmnopqrstuv"),"daniao")
+    def test_monoalphabetic_identity(self):
+        self.assertEqual(monoalpha("hermes","abcdefghijklmnopqrstuvwxyz"),"hermes")
+    def test_monoalphabetic_upper_lower(self):
+        self.assertEqual(monoalpha("heRMEs","wxyzAbcdefghijklmNOpqrstuv"), "daNIAo")
+    
 if __name__ == "__main__":
     unittest.main()
