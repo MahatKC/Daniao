@@ -2,6 +2,7 @@ import unittest
 import caesar
 from vigenere import vigenere
 from monoalphabetic import monoalpha
+from playfair import play_fair
 
 class caesar_tests(unittest.TestCase):
     def test_caesar_all_lower(self):
@@ -26,6 +27,12 @@ class monoalphabetic_tests(unittest.TestCase):
         self.assertEqual(monoalpha("hermes","abcdefghijklmnopqrstuvwxyz"),"hermes")
     def test_monoalphabetic_upper_lower(self):
         self.assertEqual(monoalpha("heRMEs","wxyzAbcdefghijklmNOpqrstuv"), "daNIAo")
+
+class playfair_tests(unittest.TestCase):
+    def test_playfair_standard(self):
+        self.assertEqual(play_fair("hermes","monarchy"),"cfnoil")
+    def test_playfair_space_cypher(self):
+        self.assertEqual(play_fair("Hide the gold in the tree stump","playfair example"),"Bmodzbxdnabekudmuixmmouvif")
     
 if __name__ == "__main__":
     unittest.main()
