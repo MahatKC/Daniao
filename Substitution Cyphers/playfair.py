@@ -85,14 +85,12 @@ def playfair_steps(tuples, new_alphabet):
     cyphertext=""
     
     for char1, char2 in tuples:
-        if equal_chars(char1,char2):
-            cyphertext += char1 + 'x'
-        elif same_row(char1,char2,new_alphabet):
+        if same_row(char1,char2,new_alphabet):
             cyphertext += get_char_to_the_right(char1,new_alphabet)
             cyphertext += get_char_to_the_right(char2,new_alphabet)  
         elif same_column(char1,char2,new_alphabet):
             cyphertext += get_char_below(char1,new_alphabet)
-            cyphertext += get_char_below(char1,new_alphabet)
+            cyphertext += get_char_below(char2,new_alphabet)
         else:
             cyphertext += get_char_a_in_same_column_as_b(char1,char2,new_alphabet)
             cyphertext += get_char_a_in_same_column_as_b(char2,char1,new_alphabet)
