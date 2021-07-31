@@ -30,7 +30,7 @@ class monoalphabetic_tests(unittest.TestCase):
 
 class playfair_tests(unittest.TestCase):
     def test_playfair_standard(self):
-        self.assertEqual(play_fair("hermes","monarchy"),"cfnoil")
+        self.assertEqual(play_fair("hermes","monarchy"),"cfmoil")
     def test_playfair_space_cypher(self):
         self.assertEqual(play_fair("Hide the gold in the tree stump","playfair example"),"Bmodzbxdnabekudmuixmmouvif")
     
